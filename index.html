@@ -20,7 +20,7 @@
             line-height: 1.6;
         }
         
-        /* الهيدر الجديد */
+        /* الهيدر */
         .header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -77,7 +77,7 @@
             padding: 0 1rem;
         }
         
-        /* الشريط الجانبي الجديد */
+        /* الشريط الجانبي */
         .sidebar {
             width: 280px;
             background: rgba(255, 255, 255, 0.95);
@@ -125,7 +125,7 @@
             border-radius: 10px;
         }
         
-        /* المنطقة الرئيسية الجديدة */
+        /* المنطقة الرئيسية */
         .main-content {
             flex: 1;
             background: rgba(255, 255, 255, 0.95);
@@ -180,6 +180,7 @@
             color: #718096;
             margin-bottom: 1rem;
             font-size: 0.9rem;
+            min-height: 60px;
         }
         
         .app-details {
@@ -188,6 +189,15 @@
             margin-bottom: 1.5rem;
             font-size: 0.85rem;
             color: #4a5568;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .app-details span {
+            background: #f7fafc;
+            padding: 0.3rem 0.6rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
         }
         
         .download-btn {
@@ -209,6 +219,28 @@
         .download-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(72, 187, 120, 0.4);
+        }
+
+        /* قسم جديد للبرامج المميزة */
+        .featured-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, transparent);
+            margin-right: 1rem;
         }
         
         /* الفوتر */
@@ -287,92 +319,174 @@
             <h3 style="margin-top: 2rem;">🔥 الأكثر تحميلاً</h3>
             <ul>
                 <li>⭐ VLC Media Player</li>
-                <li>⭐ WinRAR</li>
-                <li>⭐ Photoshop</li>
                 <li>⭐ WhatsApp</li>
+                <li>⭐ 7-Zip</li>
+                <li>⭐ VSCode</li>
             </ul>
         </aside>
 
         <main class="main-content">
-            <h2>🚀 أحدث التطبيقات والبرامج</h2>
-            
-            <div class="apps-grid">
-                <!-- بطاقة تطبيق 1 -->
-                <div class="app-card">
-                    <div class="app-icon">🎵</div>
-                    <h3>تطبيق موسيقى متقدم</h3>
-                    <p class="app-description">تطبيق استماع موسيقى مجاني بدون إعلانات مع ميزات متقدمة</p>
-                    <div class="app-details">
-                        <span>📦 15 MB</span>
-                        <span>⭐ 4.5/5</span>
-                        <span>🔄 10K+</span>
+            <!-- قسم تطبيقات الأندرويد -->
+            <div class="featured-section">
+                <h2 class="section-title">📲 تطبيقات أندرويد</h2>
+                <div class="apps-grid">
+                    <!-- VLC -->
+                    <div class="app-card">
+                        <div class="app-icon">🎬</div>
+                        <h3>VLC Media Player</h3>
+                        <p class="app-description">مشغل وسائط قوي يدعم جميع صيغ الفيديو والصوت بدون الحاجة إلى ترميزات إضافية</p>
+                        <div class="app-details">
+                            <span>📦 32 MB</span>
+                            <span>⭐ 4.7/5</span>
+                            <span>🔄 500M+</span>
+                            <span>🆓 مجاني</span>
+                        </div>
+                        <button class="download-btn" onclick="downloadApp('VLC Media Player', 'android')">📥 تحميل للأندرويد</button>
                     </div>
-                    <button class="download-btn">📥 تحميل الآن</button>
+                    
+                    <!-- WhatsApp -->
+                    <div class="app-card">
+                        <div class="app-icon">💬</div>
+                        <h3>WhatsApp</h3>
+                        <p class="app-description">تطبيق مراسلة فوري مع مكالمات صوتية وفيديو ومشاركة الملفات بجودة عالية</p>
+                        <div class="app-details">
+                            <span>📦 45 MB</span>
+                            <span>⭐ 4.5/5</span>
+                            <span>🔄 5B+</span>
+                            <span>🆓 مجاني</span>
+                        </div>
+                        <button class="download-btn" onclick="downloadApp('WhatsApp', 'android')">📥 تحميل للأندرويد</button>
+                    </div>
+                    
+                    <!-- Snapseed -->
+                    <div class="app-card">
+                        <div class="app-icon">🖼️</div>
+                        <h3>Snapseed</h3>
+                        <p class="app-description">أداة تحرير صور احترافية من جوجل مع filters متقدمة وأدوات ضبط دقيقة</p>
+                        <div class="app-details">
+                            <span>📦 28 MB</span>
+                            <span>⭐ 4.8/5</span>
+                            <span>🔄 100M+</span>
+                            <span>🆓 مجاني</span>
+                        </div>
+                        <button class="download-btn" onclick="downloadApp('Snapseed', 'android')">📥 تحميل للأندرويد</button>
+                    </div>
                 </div>
-                
-                <!-- بطاقة تطبيق 2 -->
-                <div class="app-card">
-                    <div class="app-icon">🎬</div>
-                    <h3>برنامج مونتاج فيديو</h3>
-                    <p class="app-description">برنامج مونتاج فيديو محترف مجاني بكل الميزات المتقدمة</p>
-                    <div class="app-details">
-                        <span>📦 85 MB</span>
-                        <span>⭐ 4.8/5</span>
-                        <span>🔄 25K+</span>
+            </div>
+
+            <!-- قسم برامج الكمبيوتر -->
+            <div class="featured-section">
+                <h2 class="section-title">💻 برامج كمبيوتر</h2>
+                <div class="apps-grid">
+                    <!-- 7-Zip -->
+                    <div class="app-card">
+                        <div class="app-icon">📦</div>
+                        <h3>7-Zip</h3>
+                        <p class="app-description">برنامج ضغط وفك ضغط الملفات يدعم جميع الصيغ بما فيها ZIP, RAR, ISO وغيرها</p>
+                        <div class="app-details">
+                            <span>📦 1.2 MB</span>
+                            <span>⭐ 4.8/5</span>
+                            <span>🔄 50M+</span>
+                            <span>🆓 مجاني</span>
+                        </div>
+                        <button class="download-btn" onclick="downloadApp('7-Zip', 'windows')">📥 تحميل للويندوز</button>
                     </div>
-                    <button class="download-btn">📥 تحميل الآن</button>
+                    
+                    <!-- VSCode -->
+                    <div class="app-card">
+                        <div class="app-icon">💻</div>
+                        <h3>Visual Studio Code</h3>
+                        <p class="app-description">محرر نصوص ذكي للمبرمجين مع دعم للعديد من لغات البرمجة والإضافات</p>
+                        <div class="app-details">
+                            <span>📦 85 MB</span>
+                            <span>⭐ 4.9/5</span>
+                            <span>🔄 20M+</span>
+                            <span>🆓 مجاني</span>
+                        </div>
+                        <button class="download-btn" onclick="downloadApp('VSCode', 'windows')">📥 تحميل للويندوز</button>
+                    </div>
+                    
+                    <!-- GIMP -->
+                    <div class="app-card">
+                        <div class="app-icon">🎨</div>
+                        <h3>GIMP</h3>
+                        <p class="app-description">بديل قوي ومجاني لبرنامج فوتوشوب مع أدوات متقدمة لتحرير الصور والتصميم</p>
+                        <div class="app-details">
+                            <span>📦 200 MB</span>
+                            <span>⭐ 4.6/5</span>
+                            <span>🔄 10M+</span>
+                            <span>🆓 مجاني</span>
+                        </div>
+                        <button class="download-btn" onclick="downloadApp('GIMP', 'windows')">📥 تحميل للويندوز</button>
+                    </div>
                 </div>
-                
-                <!-- بطاقة تطبيق 3 -->
-                <div class="app-card">
-                    <div class="app-icon">🖼️</div>
-                    <h3>محرر صور سهل</h3>
-                    <p class="app-description">تطبيق تحرير الصور للمبتدئين والمحترفين مع تأثيرات رائعة</p>
-                    <div class="app-details">
-                        <span>📦 45 MB</span>
-                        <span>⭐ 4.3/5</span>
-                        <span>🔄 15K+</span>
+            </div>
+
+            <!-- قسم الألعاب -->
+            <div class="featured-section">
+                <h2 class="section-title">🎮 ألعاب</h2>
+                <div class="apps-grid">
+                    <!-- Subway Surfers -->
+                    <div class="app-card">
+                        <div class="app-icon">🚅</div>
+                        <h3>Subway Surfers</h3>
+                        <p class="app-description">لعبة أركيد مسلية حيث تجري في قطار الأنفاق وتجمع العملات وتتجنب العقبات</p>
+                        <div class="app-details">
+                            <span>📦 150 MB</span>
+                            <span>⭐ 4.6/5</span>
+                            <span>🔄 1B+</span>
+                            <span>🆓 مجاني</span>
+                        </div>
+                        <button class="download-btn" onclick="downloadApp('Subway Surfers', 'android')">📥 تحميل للأندرويد</button>
                     </div>
-                    <button class="download-btn">📥 تحميل الآن</button>
+                    
+                    <!-- Among Us -->
+                    <div class="app-card">
+                        <div class="app-icon">👥</div>
+                        <h3>Among Us</h3>
+                        <p class="app-description">لعبة اجتماعية حيث يجب اكتشاف المحتال بين أفراد الطاقم في رحلة فضائية</p>
+                        <div class="app-details">
+                            <span>📦 250 MB</span>
+                            <span>⭐ 4.4/5</span>
+                            <span>🔄 500M+</span>
+                            <span>🆓 مجاني</span>
+                        </div>
+                        <button class="download-btn" onclick="downloadApp('Among Us', 'android')">📥 تحميل للأندرويد</button>
+                    </div>
                 </div>
-                
-                <!-- بطاقة تطبيق 4 -->
-                <div class="app-card">
-                    <div class="app-icon">📊</div>
-                    <h3>أداة تحليل البيانات</h3>
-                    <p class="app-description">برنامج تحليل وعرض البيانات بمخططات احترافية</p>
-                    <div class="app-details">
-                        <span>📦 120 MB</span>
-                        <span>⭐ 4.7/5</span>
-                        <span>🔄 8K+</span>
+            </div>
+
+            <!-- قسم أدوات المونتاج -->
+            <div class="featured-section">
+                <h2 class="section-title">🎬 أدوات مونتاج</h2>
+                <div class="apps-grid">
+                    <!-- Shotcut -->
+                    <div class="app-card">
+                        <div class="app-icon">🎥</div>
+                        <h3>Shotcut</h3>
+                        <p class="app-description">برنامج مونتاج فيديو مجاني ومفتوح المصدر مع دعم للعديد من الصيغ والمؤثرات</p>
+                        <div class="app-details">
+                            <span>📦 120 MB</span>
+                            <span>⭐ 4.5/5</span>
+                            <span>🔄 5M+</span>
+                            <span>🆓 مجاني</span>
+                        </div>
+                        <button class="download-btn" onclick="downloadApp('Shotcut', 'windows')">📥 تحميل للويندوز</button>
                     </div>
-                    <button class="download-btn">📥 تحميل الآن</button>
-                </div>
-                
-                <!-- بطاقة تطبيق 5 -->
-                <div class="app-card">
-                    <div class="app-icon">🎮</div>
-                    <h3>لعبة أركيد ممتعة</h3>
-                    <p class="app-description">لعبة أركيد مسلية مع تحديات متعددة وأصوات رائعة</p>
-                    <div class="app-details">
-                        <span>📦 65 MB</span>
-                        <span>⭐ 4.6/5</span>
-                        <span>🔄 50K+</span>
+                    
+                    <!-- OBS Studio -->
+                    <div class="app-card">
+                        <div class="app-icon">📹</div>
+                        <h3>OBS Studio</h3>
+                        <p class="app-description">برنامج مجاني لتسجيل الشاشة والبث المباشر مع إعدادات متقدمة واحترافية</p>
+                        <div class="app-details">
+                            <span>📦 85 MB</span>
+                            <span>⭐ 4.9/5</span>
+                            <span>🔄 15M+</span>
+                            <span>🆓 مجاني</span>
+                        </div>
+                        <button class="download-btn" onclick="downloadApp('OBS Studio', 'windows')">📥 تحميل للويندوز</button>
                     </div>
-                    <button class="download-btn">📥 تحميل الآن</button>
-                </div>
-                
-                <!-- بطاقة تطبيق 6 -->
-                <div class="app-card">
-                    <div class="app-icon">📚</div>
-                    <h3>مكتبة كتب إلكترونية</h3>
-                    <p class="app-description">آلاف الكتب المجانية في مختلف المجالات والتصنيفات</p>
-                    <div class="app-details">
-                        <span>📦 30 MB</span>
-                        <span>⭐ 4.4/5</span>
-                        <span>🔄 12K+</span>
-                    </div>
-                    <button class="download-btn">📥 تحميل الآن</button>
                 </div>
             </div>
         </main>
@@ -385,14 +499,20 @@
     </footer>
 
     <script>
-        // إضافة تفاعلات بسيطة
-        document.querySelectorAll('.download-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const appName = this.closest('.app-card').querySelector('h3').textContent;
-                alert('جاري تحميل: ' + appName + ' 🌟\nهذه نسخة تجريبية - يمكنك إضافة روابط تحميل حقيقية لاحقاً');
-            });
-        });
+        // دالة التحميل المحسنة
+        function downloadApp(appName, platform) {
+            const platforms = {
+                'android': '📱 الأندرويد',
+                'windows': '💻 الويندوز',
+                'ios': '🍎 iOS'
+            };
+            
+            const platformName = platforms[platform] || platform;
+            
+            alert(`🚀 جاري تحميل ${appName} لـ ${platformName}\n\n⏳ سيبدأ التحميل خلال ثواني...\n\n💡 يمكنك إضافة روابط تحميل حقيقية لاحقاً`);
+        }
         
+        // تفعيل الأقسام في الشريط الجانبي
         document.querySelectorAll('.sidebar li').forEach(item => {
             item.addEventListener('click', function() {
                 // إزالة النشط من جميع العناصر
@@ -403,15 +523,51 @@
                 this.classList.add('active');
                 
                 const category = this.textContent;
-                alert('عرض قسم: ' + category + ' 🚀\nسيتم تحميل التطبيقات الخاصة بهذا القسم');
+                const sectionTitles = {
+                    '📲 تطبيقات Android': '📲 تطبيقات أندرويد',
+                    '💻 برامج كمبيوتر': '💻 برامج كمبيوتر',
+                    '🎮 ألعاب': '🎮 ألعاب',
+                    '🎬 برامج مونتاج': '🎬 أدوات مونتاج'
+                };
+                
+                const targetSection = sectionTitles[category];
+                if (targetSection) {
+                    // البحث عن القسم المناسب والتمرير إليه
+                    const sections = document.querySelectorAll('.section-title');
+                    sections.forEach(section => {
+                        if (section.textContent.includes(targetSection)) {
+                            section.scrollIntoView({ 
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                }
             });
         });
         
+        // تفعيل أزرار التنقل
         document.querySelectorAll('.btn').forEach(button => {
             button.addEventListener('click', function() {
                 const action = this.textContent;
-                alert('خاصية: ' + action + ' - قيد التطوير 🔧');
+                const actions = {
+                    '🔍 بحث': 'خاصية البحث - قيد التطوير 🔧',
+                    '📥 رفع تطبيق': 'رفع تطبيق جديد - قيد التطوير 🚧',
+                    '👤 حسابي': 'نظام الحسابات - قيد التطوير 🔐'
+                };
+                
+                alert(actions[action] || 'هذه الخاصية قيد التطوير 🛠️');
             });
+        });
+
+        // تأثيرات إضافية عند التمرير
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
         });
     </script>
 </body>
